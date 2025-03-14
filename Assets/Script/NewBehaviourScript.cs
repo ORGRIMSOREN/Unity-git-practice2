@@ -8,17 +8,14 @@ public class NewBehaviourScript : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField]
-     GameObject box;  
-     
-    void Start()
-    {
-        Debug.Log("遊戲執行 Start");
-        
-    }
+     GameObject box;
 
+    
     private void Awake()
     {
         Debug.Log($"Awake");
+       
+        
     }
 
     private void OnEnable()
@@ -28,12 +25,12 @@ public class NewBehaviourScript : MonoBehaviour
 
     private void OnDisable()
     {
-        Debug.Log($"OnDisable");
+       // Debug.Log($"OnDisable");
     }
 
     private void OnDestroy()
     {
-        Debug.Log($"OnDestroy");
+       // Debug.Log($"OnDestroy");
     }
 
     private void OnCollisionEnter2D(Collision2D col)
@@ -46,10 +43,15 @@ public class NewBehaviourScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col)
     {
         box.gameObject.SetActive(true);
-        if (col.gameObject.tag == "weapon")
-        {
-            Debug.Log($"武器");
-        }
+       
+            if (col.CompareTag("weapon")) return;  // 避免誤偵測自己的武器
+
+            
+
+            if (col.gameObject.CompareTag("Enemy"))
+            {
+                Debug.Log("A 攻擊到了：" + col.name);
+            }
         
     }
 
