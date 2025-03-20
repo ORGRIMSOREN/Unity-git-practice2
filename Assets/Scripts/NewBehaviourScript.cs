@@ -48,11 +48,7 @@ public class NewBehaviourScript : MonoBehaviour
 
             
 
-            if (col.gameObject.CompareTag("Enemy"))
-            {
-                Debug.Log("A 攻擊到了：" + col.name);
-            }
-        
+            
     }
 
     private void OnTriggerExit2D(Collider2D other)
