@@ -34,5 +34,27 @@ public class CharacterTests
 
 
     }
+
+    [Test(Description = "角色攻擊死亡的敵人")]
+    public void Character_Attack_DeadEnemy()
+    {
         
+        //arrange
+        //建立玩家角色
+        var character = new GameObject().AddComponent<Character>();
+        character.SetAtk(30);
+        //建立敵人
+        var enemy=new GameObject().AddComponent<Enemy>();
+        enemy.Sethp(20);
+
+        //act
+        //攻擊
+        character.Attack(enemy);
+
+        //assert
+        var enemyhp = enemy.Gethp();
+        Assert.AreEqual(0 , enemyhp);
+
+
+    }
 }
