@@ -309,6 +309,7 @@ GameObject:
   - component: {fileID: 1200285309}
   - component: {fileID: 1200285308}
   - component: {fileID: 1200285310}
+  - component: {fileID: 1200285311}
   m_Layer: 0
   m_Name: "\u5075\u6E2C\u5340\u57DF"
   m_TagString: Enemy
@@ -418,6 +419,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1200285311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200285306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37309e3b6445ccf4985d68970613d713, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1693900153
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,7 +573,7 @@ GameObject:
   - component: {fileID: 1823196234}
   - component: {fileID: 1823196233}
   - component: {fileID: 1823196236}
-  - component: {fileID: 1823196237}
+  - component: {fileID: 1823196238}
   m_Layer: 0
   m_Name: "\u89D2\u8272"
   m_TagString: Player
@@ -708,7 +721,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.37320483, y: 0.41984582}
   m_EdgeRadius: 0
---- !u!114 &1823196237
+--- !u!114 &1823196238
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -717,10 +730,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1823196232}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac19634a799ff8d4ca72eb083b2b1a48, type: 3}
+  m_Script: {fileID: 11500000, guid: 2fa228fb23296fb4fbca70d270cb07c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  box: {fileID: 42407921}
+  enemies: []
 --- !u!1 &1896484858
 GameObject:
   m_ObjectHideFlags: 0

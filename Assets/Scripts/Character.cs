@@ -15,15 +15,22 @@ public class Character : MonoBehaviour
     {
         atk = atkValue;
     }
+
+    [SerializeField]
+    private List<Enemy> enemies = new List<Enemy>();
     
-
-    public void OnTriggerEnter2D(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D collder2D)
     {
-        throw new NotImplementedException();
+        var enemy = collder2D.GetComponent<Enemy>();
+        enemies.Add(enemy);
     }
-
+    [ContextMenu("攻擊所有偵測範圍敵人")]
     public void Attack_AllEnimes()
     {
-        throw new System.NotImplementedException();
+        foreach (var enemy in enemies)
+        {
+            enemy.TakeDamage(atk);
+        }
+        
     }
 }
